@@ -4,7 +4,7 @@ var Food = React.createClass({
 		return {
 			name: "apple",
 			timer: 10
-		};
+		}
 	},
 	getInitialState: function(){
 		// should call services here to populate
@@ -13,7 +13,7 @@ var Food = React.createClass({
 			that.decrementTimer();
 		}, 1000);
 		return {
-			timer: that.props.timer,
+			timer: this.props.timer,
 			style: {
 				"color": "black"
 			},
@@ -21,15 +21,6 @@ var Food = React.createClass({
 		}
 	},
 	componentWillMount: function(){
-		//
-	},
-	componentDidMount: function(){
-
-	},
-	componentWillReceiveProps: function(){
-
-	},
-	componentWillUpdate: function(){
 
 	},
 	render: function(){
@@ -38,12 +29,6 @@ var Food = React.createClass({
 			<h3>{this.props.name} <em style={this.state.style}>{this.state.timer}</em></h3>
 			</div>
 		);
-	},
-	componentDidUpdate: function(){
-
-	},
-	componentWillUnmount: function(){
-
 	},
 	decrementTimer: function(){
 		var newTime = this.state.timer-1;

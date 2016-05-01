@@ -1,6 +1,5 @@
 // stuff
-var Fridge = React.createClass({
-	displayName: "Fridge",
+var Fridge = React.createClass({displayName: "Fridge",
 	getInitialState: function(){
 		return {
 			open: false,
@@ -8,10 +7,13 @@ var Fridge = React.createClass({
 		}
 	},
 	render: function(){
-		var groceries = this.props.foods.map(function(food){
-			return (React.createElement(Food, React.__spread({},  food)));
+		var groceries = this.props.foods.map(function(food, index){
+			return (React.createElement(Food, React.__spread({},  food, {key: food.name + index})));
 		});
-		var extraFood = React.createElement(Food, {name: "pineapple"});
+		var food = {
+			name: "pineapple", timer: 100
+		};
+		var extraFood = React.createElement(Food, {food});
 		console.log("createElement:");
 		console.log(typeof extraFood);
 		console.log("Food:");
